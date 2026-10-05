@@ -3,13 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>マイクラ スタック計算機｜チェスト・シュルカーボックス換算</title>
-<meta name="description" content="マイクラのアイテム数を、スタック数・チェスト・ラージチェスト・シュルカーボックスに換算する無料ツール。建築素材や整地・クラフトの必要数の確認に。">
-<meta property="og:title" content="マイクラ スタック計算機｜チェスト・シュルカーボックス換算">
-<meta property="og:description" content="マイクラのアイテム数を、スタック数・チェスト・ラージチェスト・シュルカーボックスに換算する無料ツール。建築素材や整地・クラフトの必要数の確認に。">
+<title>マイクラ スタック計算機｜何スタック・チェスト何個分かを計算</title>
+<meta name="description" content="アイテム数を、スタック数・チェスト・ラージチェスト・シュルカーボックスに換算する無料ツール。64個・16個・1個の違いと各容量の一覧、計算例も掲載。">
+<meta property="og:title" content="マイクラ スタック計算機｜何スタック・チェスト何個分かを計算">
+<meta property="og:description" content="アイテム数を、スタック数・チェスト・ラージチェスト・シュルカーボックスに換算する無料ツール。64個・16個・1個の違いと各容量の一覧、計算例も掲載。">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../css/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "スタックできる数はアイテムで違いますか?", "acceptedAnswer": {"@type": "Answer", "text": "多くのブロックやアイテムは64個、エンダーパール・雪玉・卵・看板などは16個、剣や防具などの道具類は1個です。"}}, {"@type": "Question", "name": "シュルカーボックス1箱には何個入りますか?", "acceptedAnswer": {"@type": "Answer", "text": "27スロットあるので、64スタックのアイテムなら1,728個です。ラージチェストは54スロットで3,456個です。"}}]}</script>
+<link rel="canonical" href="https://tasotaso55.github.io/minecraft-tools/stack/">
+<meta property="og:url" content="https://tasotaso55.github.io/minecraft-tools/stack/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="マイクラ便利ツール集">
+<meta name="twitter:card" content="summary">
+<!-- SEO-HEAD:START -->
+<link rel="stylesheet" href="../css/guide.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://tasotaso55.github.io/minecraft-tools/"},{"@type":"ListItem","position":2,"name":"スタック計算","item":"https://tasotaso55.github.io/minecraft-tools/stack/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"マイクラ スタック計算機｜何スタック・チェスト何個分かを計算","url":"https://tasotaso55.github.io/minecraft-tools/stack/","description":"アイテム数を、スタック数・チェスト・ラージチェスト・シュルカーボックスに換算する無料ツール。64個・16個・1個の違いと各容量の一覧、計算例も掲載。","inLanguage":"ja","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}}</script>
+<!-- SEO-HEAD:END -->
 </head>
 <body>
 <header class="site"><a class="brand" href="../">⛏ マイクラ便利ツール集</a><nav class="gnav" aria-label="ツール一覧"><a href="../circle/">⭕ 円・球生成器</a><a href="../nether/">🔁 ネザー座標計算</a><a href="../stack/" aria-current="page">📦 スタック計算</a><a href="../chunk/">🧱 チャンク計算</a><a href="../distance/">📏 距離計算</a><a href="../enchantment/">✨ エンチャント一覧</a><a href="../memo/">📍 座標メモ</a><a href="../villager/">🏘 村人の取引</a></nav></header>
@@ -27,7 +37,32 @@
 </section>
 <section class="info"><h2>使い方</h2><ol><li>アイテム数を入力します。</li><li>最大スタック数(64・16・1)を選びます。</li><li>スタック数、必要スロット、チェスト・シュルカーボックスの数が表示されます。</li></ol></section>
 <section class="info"><h2>よくある質問</h2><dl><dt>スタックできる数はアイテムで違いますか?</dt><dd>多くのブロックやアイテムは64個、エンダーパール・雪玉・卵・看板などは16個、剣や防具などの道具類は1個です。</dd><dt>シュルカーボックス1箱には何個入りますか?</dt><dd>27スロットあるので、64スタックのアイテムなら1,728個です。ラージチェストは54スロットで3,456個です。</dd></dl></section>
-<section class="info"><h2>ほかのマイクラツール</h2><div class="cards"><a class="cl" href="../circle/"><b>⭕ 円・球生成器</b><span>円・楕円・球・ドームのブロック配置と必要数</span></a><a class="cl" href="../villager/"><b>🏘 村人の取引</b><span>職業別の取引内容とアイテム検索</span></a><a class="cl" href="../chunk/"><b>🧱 チャンク計算</b><span>座標からチャンク境界・リージョン</span></a><a class="cl" href="../distance/"><b>📏 距離計算</b><span>2点間の距離と移動時間の目安</span></a></div></section>
+<!-- SEO-GUIDE:START -->
+<section class="info"><h2 id="what-is-stack">Minecraftの1スタックとは?</h2>
+<p>1スタックは、1つのスロットにまとめて入れられるアイテムの最大数です。アイテムの種類で上限が決まっています。</p>
+<div class="g-table"><table>
+<tr><th>最大スタック数</th><th>主なアイテム</th></tr>
+<tr><td>64個</td><td>多くのブロック、棒、石炭、鉄インゴットなど</td></tr>
+<tr><td>16個</td><td>エンダーパール、雪玉、卵、看板、空のバケツなど</td></tr>
+<tr><td>1個</td><td>剣・ツルハシなどの道具、防具、ポーションなど</td></tr>
+</table></div>
+<p>たとえば64個のブロックは1スタック、16個のエンダーパールも1スタックです。1個しか持てない道具は、1個でスロットを1つ使います。</p></section>
+<section class="info"><h2 id="capacity">チェスト・シュルカーボックスの容量</h2>
+<div class="g-table"><table>
+<tr><th>入れ物</th><th>スロット数</th><th>64個のアイテム</th><th>16個のアイテム</th><th>1個のアイテム</th></tr>
+<tr><td>チェスト</td><td>27</td><td>1,728個</td><td>432個</td><td>27個</td></tr>
+<tr><td>ラージチェスト</td><td>54</td><td>3,456個</td><td>864個</td><td>54個</td></tr>
+<tr><td>シュルカーボックス</td><td>27</td><td>1,728個</td><td>432個</td><td>27個</td></tr>
+</table></div></section>
+<section class="info"><h2 id="examples">計算の具体例</h2>
+<ul>
+<li><strong>64個は何スタック?</strong> 1スタックです。</li>
+<li><strong>1,000個(最大スタック64)</strong> は15スタックと40個(15×64=960、残り40)です。使うスロットは16個です。</li>
+<li><strong>3,000個(最大スタック64)</strong> は46スタックと56個で、使うスロットは47個です。ラージチェスト(54スロット)1つに収まります。</li>
+</ul>
+<p>建築に使うブロック数が分からないときは、<a href="../circle/">円・球生成器</a>の必要ブロック数を入力すると、素材集めの目安が分かります。</p></section>
+<!-- SEO-GUIDE:END -->
+<section class="info"><h2>ほかのマイクラツール</h2><div class="cards"><a class="cl" href="../circle/"><b>⭕ 円・球生成器</b><span>円・楕円・球・ドームのブロック配置と必要数</span></a><a class="cl" href="../villager/"><b>🏘 村人の取引</b><span>職業別の取引内容とアイテム検索</span></a><a class="cl" href="../distance/"><b>📏 距離計算</b><span>2点間の距離と移動時間の目安</span></a></div></section>
 </main>
 <footer><a href="../">トップ</a> ・ マイクラ便利ツール集 ・ 非公式ツールです。Minecraft は Mojang Studios / Microsoft の商標です。</footer>
 <script src="../js/common.js"></script>

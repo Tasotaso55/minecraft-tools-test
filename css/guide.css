@@ -1,0 +1,7 @@
+/* 解説ブロック用の追加スタイル(既存の .info セクションの見た目に合わせ、色は継承+半透明) */
+.g-table{overflow-x:auto;margin:10px 0;-webkit-overflow-scrolling:touch}
+.g-table table{border-collapse:collapse;width:100%;min-width:420px}
+.g-table th,.g-table td{border:1px solid rgba(128,128,128,.4);padding:6px 10px;text-align:left;vertical-align:top;font-size:.95em}
+.g-table th{background:rgba(128,128,128,.14)}
+.g-formula{margin:10px 0;padding:10px 14px;border-left:4px solid rgba(128,128,128,.6);background:rgba(128,128,128,.12);border-radius:4px;overflow-x:auto}
+.g-note{margin:10px 0;padding:10px 14px;border:1px dashed rgba(128,128,128,.6);border-radius:4px;font-size:.93em}

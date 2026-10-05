@@ -3,13 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>マイクラ ネザー座標計算機｜オーバーワールドとの座標変換</title>
-<meta name="description" content="マイクラのオーバーワールドとネザーの座標を相互に変換できる無料ツール。ネザーゲートの位置合わせに便利。座標や /tp コマンドのコピーにも対応。">
-<meta property="og:title" content="マイクラ ネザー座標計算機｜オーバーワールドとの座標変換">
-<meta property="og:description" content="マイクラのオーバーワールドとネザーの座標を相互に変換できる無料ツール。ネザーゲートの位置合わせに便利。座標や /tp コマンドのコピーにも対応。">
+<title>マイクラ ネザー座標計算機｜8倍の座標変換とゲートの位置合わせ</title>
+<meta name="description" content="オーバーワールドとネザーの座標を相互に変換できる無料ツール。X・Zを8で割る/8倍にする計算方法、ネザーゲートの位置合わせ、座標がずれる原因も解説。">
+<meta property="og:title" content="マイクラ ネザー座標計算機｜8倍の座標変換とゲートの位置合わせ">
+<meta property="og:description" content="オーバーワールドとネザーの座標を相互に変換できる無料ツール。X・Zを8で割る/8倍にする計算方法、ネザーゲートの位置合わせ、座標がずれる原因も解説。">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../css/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "なぜ8倍・8分の1なのですか?", "acceptedAnswer": {"@type": "Answer", "text": "ネザーの1ブロックはオーバーワールドの8ブロックに相当するため、X・Zを8で割る(逆は8倍)と対応位置になります。Y座標は変換されません。"}}, {"@type": "Question", "name": "ゲートをぴったり同じ位置に建てられますか?", "acceptedAnswer": {"@type": "Answer", "text": "ネザー→オーバーワールドは8倍するので8ブロック分の幅があり、ずれることがあります。移動先付近に既存のゲートがあれば、そちらにつながります。"}}, {"@type": "Question", "name": "/tpコピーとは?", "acceptedAnswer": {"@type": "Answer", "text": "「/tp @s X Y Z」の形式でコピーします。チャット欄に貼るだけで移動できます(コマンドが使えるワールドのみ)。"}}]}</script>
+<link rel="canonical" href="https://tasotaso55.github.io/minecraft-tools/nether/">
+<meta property="og:url" content="https://tasotaso55.github.io/minecraft-tools/nether/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="マイクラ便利ツール集">
+<meta name="twitter:card" content="summary">
+<!-- SEO-HEAD:START -->
+<link rel="stylesheet" href="../css/guide.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://tasotaso55.github.io/minecraft-tools/"},{"@type":"ListItem","position":2,"name":"ネザー座標計算","item":"https://tasotaso55.github.io/minecraft-tools/nether/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"マイクラ ネザー座標計算機｜8倍の座標変換とゲートの位置合わせ","url":"https://tasotaso55.github.io/minecraft-tools/nether/","description":"オーバーワールドとネザーの座標を相互に変換できる無料ツール。X・Zを8で割る/8倍にする計算方法、ネザーゲートの位置合わせ、座標がずれる原因も解説。","inLanguage":"ja","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}}</script>
+<!-- SEO-HEAD:END -->
 </head>
 <body>
 <header class="site"><a class="brand" href="../">⛏ マイクラ便利ツール集</a><nav class="gnav" aria-label="ツール一覧"><a href="../circle/">⭕ 円・球生成器</a><a href="../nether/" aria-current="page">🔁 ネザー座標計算</a><a href="../stack/">📦 スタック計算</a><a href="../chunk/">🧱 チャンク計算</a><a href="../distance/">📏 距離計算</a><a href="../enchantment/">✨ エンチャント一覧</a><a href="../memo/">📍 座標メモ</a><a href="../villager/">🏘 村人の取引</a></nav></header>
@@ -28,7 +38,36 @@
 </section>
 <section class="info"><h2>使い方</h2><ol><li>変換したい側の X・Y・Z を入力します。もう一方が自動で計算されます。</li><li>「座標コピー」または「/tpコピー」で結果をコピーします。</li><li>ネザー側の座標にゲートを建て、オーバーワールドとつなぎます。</li></ol></section>
 <section class="info"><h2>よくある質問</h2><dl><dt>なぜ8倍・8分の1なのですか?</dt><dd>ネザーの1ブロックはオーバーワールドの8ブロックに相当するため、X・Zを8で割る(逆は8倍)と対応位置になります。Y座標は変換されません。</dd><dt>ゲートをぴったり同じ位置に建てられますか?</dt><dd>ネザー→オーバーワールドは8倍するので8ブロック分の幅があり、ずれることがあります。移動先付近に既存のゲートがあれば、そちらにつながります。</dd><dt>/tpコピーとは?</dt><dd>「/tp @s X Y Z」の形式でコピーします。チャット欄に貼るだけで移動できます(コマンドが使えるワールドのみ)。</dd></dl></section>
-<section class="info"><h2>ほかのマイクラツール</h2><div class="cards"><a class="cl" href="../memo/"><b>📍 座標メモ</b><span>拠点・村・ゲートの座標を保存</span></a><a class="cl" href="../distance/"><b>📏 距離計算</b><span>2点間の距離と移動時間の目安</span></a><a class="cl" href="../circle/"><b>⭕ 円・球生成器</b><span>円・楕円・球・ドームのブロック配置と必要数</span></a><a class="cl" href="../stack/"><b>📦 スタック計算</b><span>スタック・チェスト・シュルカー換算</span></a></div></section>
+<!-- SEO-GUIDE:START -->
+<section class="info"><h2 id="how-to-calc">ネザー座標の計算方法</h2>
+<p>ネザーの1ブロックは、オーバーワールドの8ブロックに相当します。そのため、X と Z だけを 8 倍または 8 分の 1 にします。Y(高さ)は変わりません。</p>
+<div class="g-table"><table>
+<tr><th>変換</th><th>計算</th></tr>
+<tr><td>オーバーワールド → ネザー</td><td>X ÷ 8、Z ÷ 8(端数は切り捨て)</td></tr>
+<tr><td>ネザー → オーバーワールド</td><td>X × 8、Z × 8</td></tr>
+</table></div>
+<p>この8倍の関係はJava版・統合版で共通です。</p></section>
+<section class="info"><h2 id="examples">計算の具体例</h2>
+<ul>
+<li>オーバーワールド (800, 64, -400) → ネザー <strong>(100, 64, -50)</strong></li>
+<li>ネザー (-25, 70, 120) → オーバーワールド <strong>(-200, 70, 960)</strong></li>
+</ul>
+<p>長い距離を移動したいときは、ネザーで1ブロック進むとオーバーワールドで8ブロック進むので、ネザー経由の移動が近道になります。移動量は<a href="../distance/">距離計算</a>で比べられます。</p></section>
+<section class="info"><h2 id="gate">ネザーゲートを狙った場所につなぐ方法</h2>
+<ol>
+<li>オーバーワールドのゲートの座標を、上のツールでネザー座標に変換します。</li>
+<li>ネザー側のその座標付近にゲートを建てます。</li>
+<li>両方のゲートの座標を<a href="../memo/">座標メモ</a>に保存しておくと、あとで迷いません。</li>
+</ol>
+<div class="g-note">ネザーからオーバーワールドへは8倍になるため、ネザー側の1ブロックのずれが、オーバーワールド側では8ブロックのずれになります。ぴったり合わせたいときは、先にネザー側の位置を決めてから、オーバーワールド側を決めると調整しやすくなります。</div></section>
+<section class="info"><h2 id="why-off">座標がずれる原因</h2>
+<ul>
+<li><strong>近くに既存のゲートがある:</strong> 移動先の付近に別のゲートがあると、新しい場所ではなくそちらにつながります。ゲート同士は離して建てます。</li>
+<li><strong>端数の切り捨て:</strong> オーバーワールドからネザーへは8で割って切り捨てるため、1ブロック程度の誤差が出ます。</li>
+<li><strong>Yは変換されない:</strong> 高さは変わらないので、ネザー側で地面や溶岩の位置に合わせた調整が必要です。</li>
+</ul></section>
+<!-- SEO-GUIDE:END -->
+<section class="info"><h2>ほかのマイクラツール</h2><div class="cards"><a class="cl" href="../distance/"><b>📏 距離計算</b><span>2点間の距離と移動時間の目安</span></a><a class="cl" href="../memo/"><b>📍 座標メモ</b><span>拠点・村・ゲートの座標を保存</span></a><a class="cl" href="../chunk/"><b>🧱 チャンク計算</b><span>座標からチャンク境界・リージョン</span></a></div></section>
 </main>
 <footer><a href="../">トップ</a> ・ マイクラ便利ツール集 ・ 非公式ツールです。Minecraft は Mojang Studios / Microsoft の商標です。</footer>
 <script src="../js/common.js"></script>
