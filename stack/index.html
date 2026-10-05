@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>マイクラ スタック計算機｜チェスト・シュルカーボックス換算</title>
+<meta name="description" content="マイクラのアイテム数を、スタック数・チェスト・ラージチェスト・シュルカーボックスに換算する無料ツール。建築素材や整地・クラフトの必要数の確認に。">
+<meta property="og:title" content="マイクラ スタック計算機｜チェスト・シュルカーボックス換算">
+<meta property="og:description" content="マイクラのアイテム数を、スタック数・チェスト・ラージチェスト・シュルカーボックスに換算する無料ツール。建築素材や整地・クラフトの必要数の確認に。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "スタックできる数はアイテムで違いますか?", "acceptedAnswer": {"@type": "Answer", "text": "多くのブロックやアイテムは64個、エンダーパール・雪玉・卵・看板などは16個、剣や防具などの道具類は1個です。"}}, {"@type": "Question", "name": "シュルカーボックス1箱には何個入りますか?", "acceptedAnswer": {"@type": "Answer", "text": "27スロットあるので、64スタックのアイテムなら1,728個です。ラージチェストは54スロットで3,456個です。"}}]}</script>
+</head>
+<body>
+<header class="site"><a class="brand" href="../">⛏ マイクラ便利ツール集</a><nav class="gnav" aria-label="ツール一覧"><a href="../circle/">⭕ 円・球生成器</a><a href="../nether/">🔁 ネザー座標計算</a><a href="../stack/" aria-current="page">📦 スタック計算</a><a href="../chunk/">🧱 チャンク計算</a><a href="../distance/">📏 距離計算</a><a href="../enchantment/">✨ エンチャント一覧</a><a href="../memo/">📍 座標メモ</a><a href="../villager/">🏘 村人の取引</a></nav></header>
+<main>
+<ol class="crumb"><li><a href="../">トップ</a></li><li>スタック計算</li></ol>
+<h1>マイクラ スタック計算機</h1>
+<p class="lead">必要なブロックやアイテムの個数から、何スタック・何チェスト分になるかを計算します。</p>
+<section class="tool on" id="t-stack" data-title="📦 スタック">
+  <h2>スタック数・チェスト計算</h2>
+  <p class="desc">アイテム数を、スタック・チェスト・シュルカーボックスに換算します。</p>
+  <div class="row two"><div><label>アイテム数</label><input type="number" id="sn" min="0"></div>
+  <div><label>最大スタック数</label><select id="ss"><option value="64">64(多くのアイテム)</option><option value="16">16(エンダーパール等)</option><option value="1">1(道具など)</option></select></div></div>
+  <div class="out" id="sout"></div>
+  <div class="note">チェスト 27 スロット、ラージチェスト 54 スロット、シュルカーボックス 27 スロット。</div>
+</section>
+<section class="info"><h2>使い方</h2><ol><li>アイテム数を入力します。</li><li>最大スタック数(64・16・1)を選びます。</li><li>スタック数、必要スロット、チェスト・シュルカーボックスの数が表示されます。</li></ol></section>
+<section class="info"><h2>よくある質問</h2><dl><dt>スタックできる数はアイテムで違いますか?</dt><dd>多くのブロックやアイテムは64個、エンダーパール・雪玉・卵・看板などは16個、剣や防具などの道具類は1個です。</dd><dt>シュルカーボックス1箱には何個入りますか?</dt><dd>27スロットあるので、64スタックのアイテムなら1,728個です。ラージチェストは54スロットで3,456個です。</dd></dl></section>
+<section class="info"><h2>ほかのマイクラツール</h2><div class="cards"><a class="cl" href="../circle/"><b>⭕ 円・球生成器</b><span>円・楕円・球・ドームのブロック配置と必要数</span></a><a class="cl" href="../villager/"><b>🏘 村人の取引</b><span>職業別の取引内容とアイテム検索</span></a><a class="cl" href="../chunk/"><b>🧱 チャンク計算</b><span>座標からチャンク境界・リージョン</span></a><a class="cl" href="../distance/"><b>📏 距離計算</b><span>2点間の距離と移動時間の目安</span></a></div></section>
+</main>
+<footer><a href="../">トップ</a> ・ マイクラ便利ツール集 ・ 非公式ツールです。Minecraft は Mojang Studios / Microsoft の商標です。</footer>
+<script src="../js/common.js"></script>
+<script src="../js/stack.js"></script>
+</body>
+</html>

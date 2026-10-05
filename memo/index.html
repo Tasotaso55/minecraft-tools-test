@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>マイクラ 座標メモ｜拠点・村・ネザーゲートの座標を保存</title>
+<meta name="description" content="マイクラの拠点・村・ネザーゲートなどの座標を名前付きで保存できる無料メモ。ネザー座標への換算や /tp コマンドのコピーにも対応。">
+<meta property="og:title" content="マイクラ 座標メモ｜拠点・村・ネザーゲートの座標を保存">
+<meta property="og:description" content="マイクラの拠点・村・ネザーゲートなどの座標を名前付きで保存できる無料メモ。ネザー座標への換算や /tp コマンドのコピーにも対応。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "メモはどこに保存されますか?", "acceptedAnswer": {"@type": "Answer", "text": "お使いのブラウザ内(localStorage)に保存され、サーバーには送信されません。別の端末やブラウザでは見られません。"}}, {"@type": "Question", "name": "メモが消えることはありますか?", "acceptedAnswer": {"@type": "Answer", "text": "ブラウザのサイトデータを削除すると消えます。大切な座標は別の場所にも控えておくと安心です。"}}]}</script>
+</head>
+<body>
+<header class="site"><a class="brand" href="../">⛏ マイクラ便利ツール集</a><nav class="gnav" aria-label="ツール一覧"><a href="../circle/">⭕ 円・球生成器</a><a href="../nether/">🔁 ネザー座標計算</a><a href="../stack/">📦 スタック計算</a><a href="../chunk/">🧱 チャンク計算</a><a href="../distance/">📏 距離計算</a><a href="../enchantment/">✨ エンチャント一覧</a><a href="../memo/" aria-current="page">📍 座標メモ</a><a href="../villager/">🏘 村人の取引</a></nav></header>
+<main>
+<ol class="crumb"><li><a href="../">トップ</a></li><li>座標メモ</li></ol>
+<h1>マイクラ 座標メモ</h1>
+<p class="lead">大事な場所の座標を名前付きで保存し、あとから検索・コピーできます。オーバーワールドとネザーの対応座標も自動で表示します。</p>
+<section class="tool on" id="t-memo" data-title="📍 座標メモ">
+  <h2>座標メモ</h2>
+  <p class="desc">拠点・村・ネザーゲートなどの座標を保存できます。このブラウザ内に保存され、端末ごとに別管理です。</p>
+  <div class="row two"><div><label>名前</label><input type="text" id="mn" placeholder="例:メイン拠点"></div>
+  <div><label>ディメンション</label><select id="md"><option value="o">🌳 オーバーワールド</option><option value="n">🔥 ネザー</option><option value="e">🌌 エンド</option></select></div></div>
+  <div class="row"><div><label>X</label><input type="number" id="mx"></div><div><label>Y(任意)</label><input type="number" id="my"></div><div><label>Z</label><input type="number" id="mz"></div></div>
+  <div><label>メモ(任意)</label><input type="text" id="mt" placeholder="例:ダイヤ鉱脈の近く"></div>
+  <button class="pri" id="madd" style="margin-top:10px">保存</button>
+  <div class="note" id="mmsg"></div>
+  <div style="margin-top:14px"><input type="search" id="mq" placeholder="メモを検索"></div>
+  <div id="mlist"></div>
+</section>
+<section class="info"><h2>使い方</h2><ol><li>名前・ディメンション・X・Y・Z を入力して「保存」を押します。</li><li>一覧から検索して、座標や /tp コマンドをコピーします。</li><li>不要なメモは「削除」で消せます。</li></ol></section>
+<section class="info"><h2>よくある質問</h2><dl><dt>メモはどこに保存されますか?</dt><dd>お使いのブラウザ内(localStorage)に保存され、サーバーには送信されません。別の端末やブラウザでは見られません。</dd><dt>メモが消えることはありますか?</dt><dd>ブラウザのサイトデータを削除すると消えます。大切な座標は別の場所にも控えておくと安心です。</dd></dl></section>
+<section class="info"><h2>ほかのマイクラツール</h2><div class="cards"><a class="cl" href="../nether/"><b>🔁 ネザー座標計算</b><span>オーバーワールドとネザーの座標変換・コピー</span></a><a class="cl" href="../distance/"><b>📏 距離計算</b><span>2点間の距離と移動時間の目安</span></a><a class="cl" href="../chunk/"><b>🧱 チャンク計算</b><span>座標からチャンク境界・リージョン</span></a><a class="cl" href="../circle/"><b>⭕ 円・球生成器</b><span>円・楕円・球・ドームのブロック配置と必要数</span></a></div></section>
+</main>
+<footer><a href="../">トップ</a> ・ マイクラ便利ツール集 ・ 非公式ツールです。Minecraft は Mojang Studios / Microsoft の商標です。</footer>
+<script src="../js/common.js"></script>
+<script src="../js/memo.js"></script>
+</body>
+</html>

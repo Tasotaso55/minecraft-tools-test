@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>マイクラ 村人の取引一覧｜職業別の取引内容・アイテム検索</title>
+<meta name="description" content="マイクラの村人の職業別の取引内容を一覧で確認できる早見表。エンダーパールなど欲しいアイテムから、どの職業と取引すればよいか・職業ブロックは何かを検索できます。">
+<meta property="og:title" content="マイクラ 村人の取引一覧｜職業別の取引内容・アイテム検索">
+<meta property="og:description" content="マイクラの村人の職業別の取引内容を一覧で確認できる早見表。エンダーパールなど欲しいアイテムから、どの職業と取引すればよいか・職業ブロックは何かを検索できます。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "村人を特定の職業にするには?", "acceptedAnswer": {"@type": "Answer", "text": "無職の村人の近くに、その職業の職業ブロック(司書なら書見台など)を設置します。各職業の「職業ブロック」欄で確認できます。"}}, {"@type": "Question", "name": "同じ職業でも取引内容が違うのはなぜ?", "acceptedAnswer": {"@type": "Answer", "text": "求められるアイテムや、もらえるアイテムの色・エンチャントには村人ごとの個体差があります。欲しい取引が出る村人を選び出す必要があります。"}}, {"@type": "Question", "name": "取引できなくなったらどうすればいいですか?", "acceptedAnswer": {"@type": "Answer", "text": "同じ取引を繰り返すと上限に達して一時的にできなくなりますが、時間がたつと補充されます。"}}, {"@type": "Question", "name": "取引の値段は変わりますか?", "acceptedAnswer": {"@type": "Answer", "text": "村を襲撃から守って評判が上がると必要なアイテムが減り、同じ品を買い続けると需要が上がって必要量が増えます。"}}]}</script>
+</head>
+<body>
+<header class="site"><a class="brand" href="../">⛏ マイクラ便利ツール集</a><nav class="gnav" aria-label="ツール一覧"><a href="../circle/">⭕ 円・球生成器</a><a href="../nether/">🔁 ネザー座標計算</a><a href="../stack/">📦 スタック計算</a><a href="../chunk/">🧱 チャンク計算</a><a href="../distance/">📏 距離計算</a><a href="../enchantment/">✨ エンチャント一覧</a><a href="../memo/">📍 座標メモ</a><a href="../villager/" aria-current="page">🏘 村人の取引</a></nav></header>
+<main>
+<ol class="crumb"><li><a href="../">トップ</a></li><li>村人の取引</li></ol>
+<h1>マイクラ 村人の取引一覧(職業別・アイテム検索)</h1>
+<p class="lead">道具鍛冶・司書・聖職者など13職業の取引内容をまとめました。欲しいアイテムや売りたいアイテムで検索すると、取引できる職業と必要な職業ブロックが分かります。</p>
+<section class="tool on" id="t-villager" data-title="村人の取引">
+  <h2>職業別の村人の取引</h2>
+  <p class="desc">職業名・アイテム名・職業ブロック名で検索できます。検索すると該当する職業が開きます。</p>
+  <input type="search" id="vq" placeholder="例:エンダーパール、司書、醸造台">
+  <div class="acts" style="margin:8px 0"><button class="sm" id="vopen">すべて開く</button><button class="sm" id="vclose">すべて閉じる</button></div>
+  <div id="vlist"></div>
+  <div class="note">取引レベルは 新米 → 見習い → 一人前 → 熟練者 → 達人 の5段階で、レベルが上がるほど取引の種類が増えます。一覧は <a href="https://game8.jp/minecraft/442394" rel="noopener">Game8の記事</a>(統合版)を参考に整理したもので、版やアップデートで内容が変わる場合があります。</div>
+</section>
+<section class="info"><h2>使い方</h2><ol><li>検索欄に欲しいアイテム名(例:エンダーパール)や職業名を入力します。</li><li>該当する職業が開き、「エメラルドで手に入る」「売ってエメラルドにできる」ものが表示されます。</li><li>村人を職業にしたいときは、表示された職業ブロックを無職の村人の近くに置きます。</li></ol></section>
+<section class="info"><h2>よくある質問</h2><dl><dt>村人を特定の職業にするには?</dt><dd>無職の村人の近くに、その職業の職業ブロック(司書なら書見台など)を設置します。各職業の「職業ブロック」欄で確認できます。</dd><dt>同じ職業でも取引内容が違うのはなぜ?</dt><dd>求められるアイテムや、もらえるアイテムの色・エンチャントには村人ごとの個体差があります。欲しい取引が出る村人を選び出す必要があります。</dd><dt>取引できなくなったらどうすればいいですか?</dt><dd>同じ取引を繰り返すと上限に達して一時的にできなくなりますが、時間がたつと補充されます。</dd><dt>取引の値段は変わりますか?</dt><dd>村を襲撃から守って評判が上がると必要なアイテムが減り、同じ品を買い続けると需要が上がって必要量が増えます。</dd></dl></section>
+<section class="info"><h2>ほかのマイクラツール</h2><div class="cards"><a class="cl" href="../enchantment/"><b>✨ エンチャント一覧</b><span>全43種の付与対象・最大レベル・競合</span></a><a class="cl" href="../stack/"><b>📦 スタック計算</b><span>スタック・チェスト・シュルカー換算</span></a><a class="cl" href="../memo/"><b>📍 座標メモ</b><span>拠点・村・ゲートの座標を保存</span></a><a class="cl" href="../nether/"><b>🔁 ネザー座標計算</b><span>オーバーワールドとネザーの座標変換・コピー</span></a></div></section>
+</main>
+<footer><a href="../">トップ</a> ・ マイクラ便利ツール集 ・ 非公式ツールです。Minecraft は Mojang Studios / Microsoft の商標です。</footer>
+<script src="../js/common.js"></script>
+<script src="../js/villager.js"></script>
+</body>
+</html>

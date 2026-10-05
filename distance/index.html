@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>マイクラ 距離計算機｜2点間の距離と移動時間</title>
+<meta name="description" content="マイクラの2つの座標間の直線距離・水平距離・マンハッタン距離と、歩き・ダッシュ・ボートなどの移動時間の目安を計算できる無料ツール。">
+<meta property="og:title" content="マイクラ 距離計算機｜2点間の距離と移動時間">
+<meta property="og:description" content="マイクラの2つの座標間の直線距離・水平距離・マンハッタン距離と、歩き・ダッシュ・ボートなどの移動時間の目安を計算できる無料ツール。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "直線距離とマンハッタン距離の違いは?", "acceptedAnswer": {"@type": "Answer", "text": "直線距離は2点を結ぶ最短距離、マンハッタン距離は X と Z の差を足した値で、マスを縦横に進むときの距離です。"}}, {"@type": "Question", "name": "移動時間は正確ですか?", "acceptedAnswer": {"@type": "Answer", "text": "水平の直線距離を基準にした目安です。地形や寄り道で変わります。歩き約4.3、ダッシュ約5.6、ボート約8、氷上ボート約40、青氷ボート約72.7ブロック毎秒で計算しています。"}}]}</script>
+</head>
+<body>
+<header class="site"><a class="brand" href="../">⛏ マイクラ便利ツール集</a><nav class="gnav" aria-label="ツール一覧"><a href="../circle/">⭕ 円・球生成器</a><a href="../nether/">🔁 ネザー座標計算</a><a href="../stack/">📦 スタック計算</a><a href="../chunk/">🧱 チャンク計算</a><a href="../distance/" aria-current="page">📏 距離計算</a><a href="../enchantment/">✨ エンチャント一覧</a><a href="../memo/">📍 座標メモ</a><a href="../villager/">🏘 村人の取引</a></nav></header>
+<main>
+<ol class="crumb"><li><a href="../">トップ</a></li><li>距離計算</li></ol>
+<h1>マイクラ 距離計算機(距離・移動時間)</h1>
+<p class="lead">地点AとBの座標を入れるだけで、距離と移動にかかる時間の目安が分かります。ネザー経由の移動量も表示します。</p>
+<section class="tool on" id="t-dist" data-title="📏 距離・移動時間">
+  <h2>2点間の距離と移動時間</h2>
+  <p class="desc">Y は空欄でもOK(空欄なら水平距離のみ)。</p>
+  <div class="sub">地点A</div>
+  <div class="row"><div><label>X</label><input type="number" id="ax"></div><div><label>Y</label><input type="number" id="ay"></div><div><label>Z</label><input type="number" id="az"></div></div>
+  <div class="sub">地点B</div>
+  <div class="row"><div><label>X</label><input type="number" id="bx"></div><div><label>Y</label><input type="number" id="by"></div><div><label>Z</label><input type="number" id="bz"></div></div>
+  <div class="out" id="dout"></div>
+  <div class="note">時間は水平の直線距離での目安です(歩き 4.3 / ダッシュ 5.6 / ボート 8 / 氷上ボート 40 / 青氷ボート 72.7 ブロック毎秒)。</div>
+</section>
+<section class="info"><h2>使い方</h2><ol><li>地点AとBの X・Z を入力します(Y は空欄でもOKです)。</li><li>直線距離・マンハッタン距離・ネザー経由の移動量が表示されます。</li><li>歩き・ダッシュ・ボートなど移動手段ごとの所要時間を比べられます。</li></ol></section>
+<section class="info"><h2>よくある質問</h2><dl><dt>直線距離とマンハッタン距離の違いは?</dt><dd>直線距離は2点を結ぶ最短距離、マンハッタン距離は X と Z の差を足した値で、マスを縦横に進むときの距離です。</dd><dt>移動時間は正確ですか?</dt><dd>水平の直線距離を基準にした目安です。地形や寄り道で変わります。歩き約4.3、ダッシュ約5.6、ボート約8、氷上ボート約40、青氷ボート約72.7ブロック毎秒で計算しています。</dd></dl></section>
+<section class="info"><h2>ほかのマイクラツール</h2><div class="cards"><a class="cl" href="../nether/"><b>🔁 ネザー座標計算</b><span>オーバーワールドとネザーの座標変換・コピー</span></a><a class="cl" href="../chunk/"><b>🧱 チャンク計算</b><span>座標からチャンク境界・リージョン</span></a><a class="cl" href="../memo/"><b>📍 座標メモ</b><span>拠点・村・ゲートの座標を保存</span></a><a class="cl" href="../stack/"><b>📦 スタック計算</b><span>スタック・チェスト・シュルカー換算</span></a></div></section>
+</main>
+<footer><a href="../">トップ</a> ・ マイクラ便利ツール集 ・ 非公式ツールです。Minecraft は Mojang Studios / Microsoft の商標です。</footer>
+<script src="../js/common.js"></script>
+<script src="../js/distance.js"></script>
+</body>
+</html>

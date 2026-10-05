@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>マイクラ エンチャント一覧(全43種)｜付与できるアイテム・最大レベル・競合早見表</title>
+<meta name="description" content="マイクラ全43種のエンチャントについて、付与できるアイテム(盾・エリトラ・ハサミなども)、最大レベル、競合を一覧で確認できる早見表。統合版・Java版に対応し、アイテムごとの検索もできます。">
+<meta property="og:title" content="マイクラ エンチャント一覧(全43種)｜付与できるアイテム・最大レベル・競合早見表">
+<meta property="og:description" content="マイクラ全43種のエンチャントについて、付与できるアイテム(盾・エリトラ・ハサミなども)、最大レベル、競合を一覧で確認できる早見表。統合版・Java版に対応し、アイテムごとの検索もできます。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "「宝」マークとは?", "acceptedAnswer": {"@type": "Answer", "text": "エンチャントテーブルには出ず、宝箱・釣り・取引・ピグリンとの物々交換などで入手するトレジャーエンチャントです。修繕、氷渡り、ソウルスピード、スニーク速度上昇、束縛の呪い、消滅の呪いが該当します。"}}, {"@type": "Question", "name": "「金床のみ」とは?", "acceptedAnswer": {"@type": "Answer", "text": "エンチャントテーブルの候補には出ず、エンチャントの本などを金床で合成して付けるものです。盾・エリトラ・火打石と打ち金・ハサミなどの耐久力や修繕もこれに当たります。"}}, {"@type": "Question", "name": "修繕と無限は同時に付けられますか?", "acceptedAnswer": {"@type": "Answer", "text": "付けられません(競合)。同じ表示の競合欄で、同時に付けられない組み合わせを確認できます。"}}, {"@type": "Question", "name": "統合版とJava版で何が違いますか?", "acceptedAnswer": {"@type": "Answer", "text": "範囲ダメージ増加はJava版のみです。斧のダメージ増加系、メイスの特効系、メイスの火属性は、統合版ではテーブルで出ますがJava版では金床のみです。棘の鎧の対象部位やハサミのシルクタッチなども異なります。名前も一部違います(突進/ランジ、密度/重撃、違反/防具貫通、爆風/ウィンドバースト。前が統合版、後ろがJava版)。"}}, {"@type": "Question", "name": "全43種とありますが、統合版も43種ですか?", "acceptedAnswer": {"@type": "Answer", "text": "Java版を含めた数が43種で、統合版は範囲ダメージ増加がないため42種です。"}}]}</script>
+</head>
+<body>
+<header class="site"><a class="brand" href="../">⛏ マイクラ便利ツール集</a><nav class="gnav" aria-label="ツール一覧"><a href="../circle/">⭕ 円・球生成器</a><a href="../nether/">🔁 ネザー座標計算</a><a href="../stack/">📦 スタック計算</a><a href="../chunk/">🧱 チャンク計算</a><a href="../distance/">📏 距離計算</a><a href="../enchantment/" aria-current="page">✨ エンチャント一覧</a><a href="../memo/">📍 座標メモ</a><a href="../villager/">🏘 村人の取引</a></nav></header>
+<main>
+<ol class="crumb"><li><a href="../">トップ</a></li><li>エンチャント一覧</li></ol>
+<h1>マイクラ エンチャント一覧(全43種・アイテム別早見表)</h1>
+<p class="lead">エンチャントの名前で調べるだけでなく、「このアイテムには何が付けられる?」を逆引きできます。統合版とJava版の違いも切り替えて確認できます。</p>
+<section class="tool on" id="t-ench" data-title="エンチャント">
+  <h2>エンチャント一覧(全43種)</h2>
+  <p class="desc">エンチャントごと・アイテムごとに、付けられるもの、最大レベル、競合を確認できます。</p>
+  <div class="row two">
+    <div><label>版</label><select id="eed"><option value="be">統合版</option><option value="je">Java版</option></select></div>
+    <div><label>見かた</label><select id="evw"><option value="e">エンチャントから探す</option><option value="i">アイテムから探す</option></select></div>
+  </div>
+  <div id="pe">
+    <input type="search" id="eq" placeholder="名前で検索(例:修繕、Mending)">
+    <div class="chips" id="echips"></div>
+    <div class="egrid" id="elist"></div>
+  </div>
+  <div id="pi" style="display:none">
+    <label>アイテム</label><select id="eitem"></select>
+    <div class="note" id="icnt"></div>
+    <div class="egrid" id="ilist" style="margin-top:8px"></div>
+  </div>
+  <div class="note" id="ecnt"></div>
+  <div class="note">「金床のみ」は、エンチャントテーブルでは出ず、エンチャントの本などを金床で合成して付けるものです。カメの甲羅はヘルメットと同じエンチャントが付けられます。情報は <a href="https://ja.minecraft.wiki/w/%E3%82%A8%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%E3%83%88" rel="noopener">Minecraft Wiki(日本語版)</a> ・<a href="https://minecraft-yutakura.com/enchant-list/" rel="noopener">マイクラ攻略まとめ</a>・<a href="https://game8.jp/minecraft/309171" rel="noopener">Game8</a> を参考に整理しています。</div>
+</section>
+<section class="info"><h2>使い方</h2><ol><li>「版」(統合版/Java版)と「見かた」(エンチャントから/アイテムから)を選びます。</li><li>エンチャントから探す場合は、名前の検索かカテゴリのボタンで絞り込みます。</li><li>アイテムから探す場合は、アイテムを選ぶと付けられるエンチャントが一覧で出ます。「テーブル可」と「金床のみ」が区別されています。</li></ol></section>
+<section class="info"><h2>よくある質問</h2><dl><dt>「宝」マークとは?</dt><dd>エンチャントテーブルには出ず、宝箱・釣り・取引・ピグリンとの物々交換などで入手するトレジャーエンチャントです。修繕、氷渡り、ソウルスピード、スニーク速度上昇、束縛の呪い、消滅の呪いが該当します。</dd><dt>「金床のみ」とは?</dt><dd>エンチャントテーブルの候補には出ず、エンチャントの本などを金床で合成して付けるものです。盾・エリトラ・火打石と打ち金・ハサミなどの耐久力や修繕もこれに当たります。</dd><dt>修繕と無限は同時に付けられますか?</dt><dd>付けられません(競合)。同じ表示の競合欄で、同時に付けられない組み合わせを確認できます。</dd><dt>統合版とJava版で何が違いますか?</dt><dd>範囲ダメージ増加はJava版のみです。斧のダメージ増加系、メイスの特効系、メイスの火属性は、統合版ではテーブルで出ますがJava版では金床のみです。棘の鎧の対象部位やハサミのシルクタッチなども異なります。名前も一部違います(突進/ランジ、密度/重撃、違反/防具貫通、爆風/ウィンドバースト。前が統合版、後ろがJava版)。</dd><dt>全43種とありますが、統合版も43種ですか?</dt><dd>Java版を含めた数が43種で、統合版は範囲ダメージ増加がないため42種です。</dd></dl></section>
+<section class="info"><h2>ほかのマイクラツール</h2><div class="cards"><a class="cl" href="../villager/"><b>🏘 村人の取引</b><span>職業別の取引内容とアイテム検索</span></a><a class="cl" href="../stack/"><b>📦 スタック計算</b><span>スタック・チェスト・シュルカー換算</span></a><a class="cl" href="../circle/"><b>⭕ 円・球生成器</b><span>円・楕円・球・ドームのブロック配置と必要数</span></a><a class="cl" href="../nether/"><b>🔁 ネザー座標計算</b><span>オーバーワールドとネザーの座標変換・コピー</span></a></div></section>
+</main>
+<footer><a href="../">トップ</a> ・ マイクラ便利ツール集 ・ 非公式ツールです。Minecraft は Mojang Studios / Microsoft の商標です。</footer>
+<script src="../js/common.js"></script>
+<script src="../js/enchantment.js"></script>
+</body>
+</html>
