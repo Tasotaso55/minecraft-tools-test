@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>マイクラ円・球・ドームの作り方｜ブロック配置ジェネレーター</title>
+<meta name="description" content="マイクラで円・楕円・球・ドームを作るためのブロック配置ツール。直径を入れると上から見た図と層ごとの配置、必要ブロック数が分かります。円形建築の作り方や直径別の目安も解説。">
+<meta property="og:title" content="マイクラ円・球・ドームの作り方｜ブロック配置ジェネレーター">
+<meta property="og:description" content="マイクラで円・楕円・球・ドームを作るためのブロック配置ツール。直径を入れると上から見た図と層ごとの配置、必要ブロック数が分かります。円形建築の作り方や直径別の目安も解説。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "偶数と奇数の直径、どちらがきれいですか?", "acceptedAnswer": {"@type": "Answer", "text": "奇数直径は中心が1ブロック、偶数直径は中心が4ブロックの交点になります。中心に柱やビーコンを置きたいなら奇数がおすすめです。"}}, {"@type": "Question", "name": "他の生成サイトと1ブロックずれることがあります。", "acceptedAnswer": {"@type": "Answer", "text": "各マスの中心が円や球の内側にあるかで判定しています。生成ツールごとに判定方法が違うため、直径が小さいときなどは数ブロック変わることがあります。"}}, {"@type": "Question", "name": "ドームの底は塞がりますか?", "acceptedAnswer": {"@type": "Answer", "text": "外周のみの場合、ドームの底は開いた状態で表示されます。"}}]}</script>
+<link rel="canonical" href="https://tasotaso55.github.io/minecraft-tools/circle/">
+<meta property="og:url" content="https://tasotaso55.github.io/minecraft-tools/circle/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="マイクラ便利ツール集">
+<meta name="twitter:card" content="summary">
+<!-- SEO-HEAD:START -->
+<link rel="stylesheet" href="../css/guide.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://tasotaso55.github.io/minecraft-tools/"},{"@type":"ListItem","position":2,"name":"円・球生成器","item":"https://tasotaso55.github.io/minecraft-tools/circle/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"マイクラ円・球・ドームの作り方｜ブロック配置ジェネレーター","url":"https://tasotaso55.github.io/minecraft-tools/circle/","description":"マイクラで円・楕円・球・ドームを作るためのブロック配置ツール。直径を入れると上から見た図と層ごとの配置、必要ブロック数が分かります。円形建築の作り方や直径別の目安も解説。","inLanguage":"ja","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}}</script>
+<!-- SEO-HEAD:END -->
+</head>
+<body>
+<header class="site"><a class="brand" href="../">⛏ マイクラ便利ツール集</a><nav class="gnav" aria-label="ツール一覧"><a href="../circle/" aria-current="page">⭕ 円・球生成器</a><a href="../nether/">🔁 ネザー座標計算</a><a href="../stack/">📦 スタック計算</a><a href="../chunk/">🧱 チャンク計算</a><a href="../distance/">📏 距離計算</a><a href="../enchantment/">✨ エンチャント一覧</a><a href="../memo/">📍 座標メモ</a><a href="../villager/">🏘 村人の取引</a></nav></header>
+<main>
+<ol class="crumb"><li><a href="../">トップ</a></li><li>円・球生成器</li></ol>
+<h1>マイクラ円生成器(円・楕円・球・ドーム)</h1>
+<p class="lead">直径を入れるだけで、どこにブロックを置けばよいかが分かる円形建築用の配置ツールです。塗りつぶし・外周のみを選べます。</p>
+<section class="tool on" id="t-circle" data-title="⭕ 円・球・ドーム">
+  <h2>円・球・ドームの作図</h2>
+  <p class="desc">上から見た図で、どこにブロックを置けばよいかを表示します。</p>
+  <div class="row two">
+    <div><label>形</label><select id="cs-shape"><option value="circle">円</option><option value="ellipse">楕円</option><option value="sphere">球</option><option value="dome">ドーム</option></select></div>
+    <div><label>置き方</label><select id="cs-mode"><option value="fill">塗りつぶし</option><option value="outline">外周のみ</option></select></div>
+  </div>
+  <div class="row two">
+    <div><label id="cs-wl">直径</label><input type="number" id="cs-w" min="1" value="11"></div>
+    <div id="cs-dw" style="display:none"><label>奥行き(Z方向)</label><input type="number" id="cs-d" min="1" value="7"></div>
+  </div>
+  <div id="cs-lay" style="display:none">
+    <div class="hrow"><button class="sm" id="cs-prev">◀</button><input type="range" id="cs-rng" min="1" max="1" value="1" style="flex:1"><button class="sm" id="cs-next">▶</button></div>
+    <label style="margin-top:6px"><input type="checkbox" id="cs-all" style="width:auto"> 全層を並べて表示</label>
+    <div class="note" id="cs-ln"></div>
+  </div>
+  <div style="margin-top:10px"><canvas id="cs-cv" style="max-width:100%;height:auto;display:block"></canvas></div>
+  <button class="sm" id="cs-save" style="margin-top:8px">🖼 画像として保存</button>
+  <div class="out" id="cs-out"></div>
+  <details style="margin-top:8px"><summary class="note">行ごとの置き方(テキスト)</summary><pre id="cs-txt" style="font-size:.8rem;overflow-x:auto;margin:6px 0 0"></pre></details>
+  <div class="note">図は上から見た状態です(横が X、縦が Z)。点線が中心線です。球・ドームは下の層から順に積みます。</div>
+</section>
+<section class="info"><h2>使い方</h2><ol><li>「形」(円・楕円・球・ドーム)と「置き方」(塗りつぶし/外周のみ)を選びます。</li><li>直径(楕円は幅と奥行き)を入力すると、上から見た配置図と必要ブロック数が表示されます。</li><li>球・ドームは◀▶で層を切り替え、下の層から順に積みます。「画像として保存」で画像にしておくと建築中に見返せます。</li></ol></section>
+<section class="info"><h2>よくある質問</h2><dl><dt>偶数と奇数の直径、どちらがきれいですか?</dt><dd>奇数直径は中心が1ブロック、偶数直径は中心が4ブロックの交点になります。中心に柱やビーコンを置きたいなら奇数がおすすめです。</dd><dt>他の生成サイトと1ブロックずれることがあります。</dt><dd>各マスの中心が円や球の内側にあるかで判定しています。生成ツールごとに判定方法が違うため、直径が小さいときなどは数ブロック変わることがあります。</dd><dt>ドームの底は塞がりますか?</dt><dd>外周のみの場合、ドームの底は開いた状態で表示されます。</dd></dl></section>
+<!-- SEO-GUIDE:START -->
+<section class="info"><h2 id="how-to-circle">マイクラで円・球・ドームを作る方法</h2>
+<p>円形の建築は、先に「どのブロックを置くか」を平面図で決めておくと、置き間違いや作り直しを減らせます。上のツールで直径を入れると、上から見た配置図と必要ブロック数が表示されます。図の点線(中心線)を基準に、1行ずつ置いていきます。</p>
+<ol>
+<li>形(円・楕円・球・ドーム)と置き方(塗りつぶし/外周のみ)を選び、直径を入力します。</li>
+<li>中心線を地面に先に引き、図の1行目から順に、連続して置くブロックの数を数えながら並べます。</li>
+<li>左右対称なので、1/4を作ってから残りを折り返すと楽です。</li>
+<li>球・ドームは◀▶で層を切り替え、下の層から順に積みます。</li>
+</ol></section>
+<section class="info"><h2 id="shapes">円・楕円・球・ドームの違い</h2>
+<div class="g-table"><table>
+<tr><th>形</th><th>向いている建築</th><th>入力するもの</th></tr>
+<tr><td>円</td><td>塔、広場、円形の床や壁、噴水の縁</td><td>直径</td></tr>
+<tr><td>楕円</td><td>競技場、細長い池、楕円形の部屋</td><td>幅(X方向)と奥行き(Z方向)</td></tr>
+<tr><td>球</td><td>惑星、巨大なオブジェ、球形の部屋</td><td>直径(層ごとに表示)</td></tr>
+<tr><td>ドーム</td><td>屋根、温室、ドーム型の建物</td><td>直径(層ごとに表示)</td></tr>
+</table></div>
+<p>ドームは球の上半分にあたる形で、外周のみを選ぶと底は開いた状態で表示されます。</p></section>
+<section class="info"><h2 id="examples">直径別の目安(円・塗りつぶし)</h2>
+<p>このツールの判定方法(各マスの中心が円の内側にあるか)で数えた、偶数直径の例です。</p>
+<div class="g-table"><table>
+<tr><th>直径</th><th>必要ブロック数(塗りつぶし)</th><th>上から1/2までの各行の連続数</th></tr>
+<tr><td>10</td><td>80個</td><td>4, 8, 8, 10, 10</td></tr>
+<tr><td>20</td><td>316個</td><td>6, 10, 14, 16, 16, 18, 18, 20, 20, 20</td></tr>
+<tr><td>30</td><td>716個</td><td>8, 14, 16, 20, 22, 24, 24, 26, 28, 28, 28, 30, 30, 30, 30</td></tr>
+</table></div>
+<p>直径10の円なら、上から4個、8個、8個、10個、10個と置き、あとは上下を折り返します。必要数が多いときは<a href="../stack/">スタック計算</a>でスタック数に直すと素材集めの目安になります。</p></section>
+<section class="info"><h2 id="more">補足Q&amp;A</h2>
+<h3>円形の設計図を保存したいです</h3>
+<p>「画像として保存」で配置図を画像にできます。スマホならスクリーンショット代わりに建築中に見返せます。</p>
+<h3>建築の場所を忘れないようにするには?</h3>
+<p>円の中心の座標は<a href="../memo/">座標メモ</a>に名前を付けて保存しておくと、あとから探しやすくなります。</p></section>
+<!-- SEO-GUIDE:END -->
+<section class="info"><h2>ほかのマイクラツール</h2><div class="cards"><a class="cl" href="../stack/"><b>📦 スタック計算</b><span>スタック・チェスト・シュルカー換算</span></a><a class="cl" href="../memo/"><b>📍 座標メモ</b><span>拠点・村・ゲートの座標を保存</span></a><a class="cl" href="../chunk/"><b>🧱 チャンク計算</b><span>座標からチャンク境界・リージョン</span></a><a class="cl" href="../distance/"><b>📏 距離計算</b><span>2点間の距離と移動時間の目安</span></a></div></section>
+</main>
+<footer><a href="../">トップ</a> ・ マイクラ便利ツール集 ・ 非公式ツールです。Minecraft は Mojang Studios / Microsoft の商標です。</footer>
+<script src="../js/common.js"></script>
+<script src="../js/circle.js"></script>
+</body>
+</html>
