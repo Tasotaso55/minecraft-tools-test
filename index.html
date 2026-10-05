@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Minecraft便利ツール集｜無料で使えるマイクラ計算・攻略ツール</title>
+<meta name="description" content="Minecraftの建築・座標・計算・エンチャント・村人取引に使える無料ブラウザツール集。円・球・ドーム生成、ネザー座標計算、スタック計算、チャンク・距離計算などをすぐに使えます。">
+<link rel="canonical" href="https://tasotaso55.github.io/minecraft-tools/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="マイクラ便利ツール集">
+<meta property="og:title" content="Minecraft便利ツール集｜無料で使えるマイクラ計算・攻略ツール">
+<meta property="og:description" content="建築・座標・計算・エンチャント・村人取引など、Minecraftで面倒な計算や検索をブラウザ上ですぐにできる無料ツール集。">
+<meta property="og:url" content="https://tasotaso55.github.io/minecraft-tools/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="assets/portal.css">
+<!-- BUILD:JSONLD:START -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"マイクラ便利ツール集","url":"https://tasotaso55.github.io/minecraft-tools/","inLanguage":"ja"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Minecraft便利ツール集","url":"https://tasotaso55.github.io/minecraft-tools/","inLanguage":"ja","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"マイクラ円・球・ドーム生成器","url":"https://tasotaso55.github.io/minecraft-tools/circle/"},{"@type":"ListItem","position":2,"name":"マイクラ ネザー座標計算機","url":"https://tasotaso55.github.io/minecraft-tools/nether/"},{"@type":"ListItem","position":3,"name":"マイクラ スタック計算機","url":"https://tasotaso55.github.io/minecraft-tools/stack/"},{"@type":"ListItem","position":4,"name":"マイクラ チャンク計算機","url":"https://tasotaso55.github.io/minecraft-tools/chunk/"},{"@type":"ListItem","position":5,"name":"マイクラ距離計算機","url":"https://tasotaso55.github.io/minecraft-tools/distance/"},{"@type":"ListItem","position":6,"name":"マイクラ エンチャント一覧","url":"https://tasotaso55.github.io/minecraft-tools/enchantment/"},{"@type":"ListItem","position":7,"name":"マイクラ 座標メモ","url":"https://tasotaso55.github.io/minecraft-tools/memo/"},{"@type":"ListItem","position":8,"name":"マイクラ 村人の取引一覧","url":"https://tasotaso55.github.io/minecraft-tools/villager/"}]}}</script>
+<!-- BUILD:JSONLD:END -->
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name" href="./">⛏ マイクラ便利ツール集</a>
+    <span class="site-tag">無料・ブラウザで動作</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>Minecraftで使える無料便利ツールをまとめています</h1>
+    <p>建築・座標・計算・エンチャント・アイテム・村人取引など、Minecraftで面倒な計算や検索をブラウザ上ですぐにできます。インストールや登録は不要です。</p>
+  </section>
+
+  <section class="finder" aria-label="ツール検索">
+    <label for="tool-search">使いたいツールを検索</label>
+    <div class="cmdbar">
+      <span aria-hidden="true">/</span>
+      <input id="tool-search" type="search" placeholder="例: ネザー、円、座標、エンチャント" autocomplete="off" enterkeyhint="search">
+    </div>
+    <ul class="chips" id="cat-filter" aria-label="カテゴリーで絞り込み"></ul>
+    <p class="status" id="result-status" role="status" aria-live="polite"></p>
+  </section>
+
+  <main id="results">
+    <noscript>
+      <p>JavaScriptが無効のため、ツール一覧を簡易表示しています。</p>
+      <!-- BUILD:NOSCRIPT:START -->
+<ul>
+  <li><a href="circle/">マイクラ円・球・ドーム生成器</a> - 円・楕円・球・ドームのブロック配置を、上から見た図と層ごとの表示で確認。必要ブロック数の計算・画像保存に対応。</li>
+  <li><a href="nether/">マイクラ ネザー座標計算機</a> - オーバーワールドとネザーの座標を相互に変換。ネザーゲートの位置合わせや /tp コマンドのコピーに。</li>
+  <li><a href="stack/">マイクラ スタック計算機</a> - アイテム数をスタック・チェスト・シュルカーボックス単位に換算。</li>
+  <li><a href="chunk/">マイクラ チャンク計算機</a> - 座標から、そのブロックがあるチャンクの境界とリージョンを調べられます。</li>
+  <li><a href="distance/">マイクラ距離計算機</a> - 2点の座標からブロック間の距離と、移動時間の目安を計算。</li>
+  <li><a href="enchantment/">マイクラ エンチャント一覧</a> - 全43種のエンチャントについて、付与できる対象・最大レベル・競合するエンチャントを確認。</li>
+  <li><a href="memo/">マイクラ 座標メモ</a> - 拠点・村・ネザーゲートなどの座標を名前付きで保存。</li>
+  <li><a href="villager/">マイクラ 村人の取引一覧</a> - 職業別の取引内容を確認。アイテム名から取引を検索できます。</li>
+</ul>
+<!-- BUILD:NOSCRIPT:END -->
+    </noscript>
+  </main>
+
+  <section class="about">
+    <h2>このサイトについて</h2>
+    <p>すべてのツールはブラウザ上で動作し、入力した内容がサーバーに送信されることはありません。計算はJava版を基準にした目安です。</p>
+    <h3>Java版・統合版の表示について</h3>
+    <ul>
+      <li><strong>○</strong> 対応しています</li>
+      <li><strong>△</strong> 一部のみ対応しています(カードにマウスを合わせるか、各ツールページで詳細を確認できます)</li>
+      <li><strong>？</strong> 統合版での動作・仕様をまだ確認できていません</li>
+    </ul>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">非公式ツールです。Minecraft は Mojang Studios / Microsoft の商標です。</div>
+</footer>
+
+<script src="assets/tools-data.js"></script>
+<script src="assets/portal.js" defer></script>
+</body>
+</html>

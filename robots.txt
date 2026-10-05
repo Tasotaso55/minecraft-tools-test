@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tasotaso55.github.io/minecraft-tools/sitemap.xml

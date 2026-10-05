@@ -1,0 +1,60 @@
+:root{
+  --bg:#f4f5f0;--surface:#fff;--ink:#1c2018;--muted:#586152;--line:#d6dacb;
+  --grass:#3f7d20;--grass-d:#2f6016;--dirt:#7a4e24;--soft:#e8f1de;--warn:#fff3d6;--warn-ink:#6b4a00;
+  --font:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Noto Sans JP",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#15180f;--surface:#1f2318;--ink:#eef1e8;--muted:#a8b09f;--line:#343a2a;--grass:#6cbf3f;--grass-d:#8bd460;--dirt:#c79a66;--soft:#25301a;--warn:#3a3014;--warn-ink:#f3d98a}
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.75;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+.site-header{border-bottom:4px solid var(--dirt);background:var(--surface)}
+.site-header .wrap{display:flex;align-items:center;gap:10px;min-height:56px}
+.site-name{font-weight:700;font-size:1.05rem;text-decoration:none}
+.site-tag{color:var(--muted);font-size:.85rem}
+.hero{padding:32px 0 8px}
+.hero h1{margin:0 0 12px;font-size:clamp(1.45rem,5.5vw,2.1rem);line-height:1.35}
+.hero p{margin:0;max-width:40em;color:var(--muted)}
+.finder{padding:20px 0 4px}
+.finder label{display:block;font-weight:700;margin-bottom:8px}
+.cmdbar{display:flex;align-items:center;background:#1c2018;border-radius:8px;border:2px solid #000;box-shadow:inset 0 0 0 2px #3a3f33}
+.cmdbar:focus-within{outline:3px solid var(--grass);outline-offset:2px}
+.cmdbar span{padding:0 4px 0 14px;color:#9bd36b;font:700 1.15rem/1 ui-monospace,Menlo,Consolas,monospace}
+.cmdbar input{flex:1;min-width:0;min-height:52px;padding:0 14px 0 6px;border:0;background:transparent;color:#fff;font:inherit;font-size:16px;outline:0}
+.cmdbar input::placeholder{color:#a9b09f}
+.cmdbar input::-webkit-search-cancel-button{filter:invert(1)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;padding:0;list-style:none}
+.chip{min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font:inherit;font-size:.95rem;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--grass);border-color:var(--grass);color:#fff;font-weight:700}
+.chip:focus-visible,.tool-card:focus-visible{outline:3px solid var(--grass);outline-offset:2px}
+.status{min-height:1.5em;margin:10px 0 0;color:var(--muted);font-size:.9rem}
+main{padding-bottom:8px}
+.block{margin:28px 0}
+.block>h2{margin:0 0 4px;font-size:1.3rem;line-height:1.4}
+.block>h3{margin:0 0 4px;font-size:1.15rem;line-height:1.4}
+.block>.lead{margin:0 0 12px;color:var(--muted);font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:12px}
+.tool-card{display:flex;gap:12px;padding:14px;min-height:44px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--grass);border-radius:6px;text-decoration:none}
+.tool-card:hover{border-color:var(--grass)}
+.tool-icon{flex:none;font-size:1.8rem;line-height:1.2}
+.tool-body{display:flex;flex-direction:column;gap:6px;min-width:0}
+.tool-body strong{font-size:1.02rem;line-height:1.4}
+.tool-sum{font-size:.9rem;color:var(--muted);line-height:1.6}
+.tool-meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.cat-label{font-size:.78rem;color:var(--dirt)}
+.badge{display:inline-block;padding:1px 8px;border-radius:4px;font-size:.78rem;line-height:1.6;border:1px solid var(--line);white-space:nowrap}
+.badge-yes{background:var(--soft);border-color:var(--grass);color:var(--grass-d)}
+.badge-partial{background:var(--warn);border-color:#d9a400;color:var(--warn-ink)}
+.badge-unknown{background:transparent;color:var(--muted);border-style:dashed}
+.flag{font-size:.78rem;font-weight:700;color:var(--dirt)}
+.empty{padding:16px;background:var(--surface);border:1px dashed var(--line);border-radius:6px}
+.about{margin:36px 0 0;padding:20px 0;border-top:1px solid var(--line)}
+.about h2{font-size:1.15rem;margin:0 0 8px}
+.about h3{font-size:1rem;margin:16px 0 4px}
+.about p,.about li{font-size:.93rem;color:var(--muted)}
+.about ul{padding-left:1.2em;margin:4px 0}
+.site-footer{padding:20px 0 32px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
