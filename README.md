@@ -1,99 +1,57 @@
-# マイクラ便利ツール集 ポータル化パッチ
+# 個別ツールページ改善パッチ(8ページ)
 
-既存の各ツールページ(`circle/` `nether/` ほか)・URL・機能には**一切触れません**。
-追加・置き換えするのは下記のファイルだけです。
+既存のURL・ツール機能・デザインには触れません。各 `*/index.html` に対して、次の2点だけを追加・置換します。
 
-| ファイル | 内容 |
-|---|---|
-| `index.html` | ホームページ(**既存の index.html を置き換え**。元ファイルは事前にバックアップ) |
-| `assets/tools-data.js` | ツール情報の一元管理(name / url / summary / category / versions / keywords / related / isPopular / isNew) |
-| `assets/portal.css`, `assets/portal.js` | ホーム専用のCSS/JS(クラス名は `tool-` `chip` 等。既存CSSと衝突しないか確認してください) |
-| `favicon.svg` | ファビコン |
-| `sitemap.xml`, `robots.txt` | `scripts/build.mjs` で再生成可能 |
-| `scripts/build.mjs` | sitemap・JSON-LD・noscript一覧を `tools-data.js` から再生成 |
+1. `<head>`: title / description / OGP の更新、canonical・og:url の追加、JSON-LD(BreadcrumbList・WebApplication)、`assets/guide.css` の読み込み
+2. 本文: 「ほかのマイクラツール」見出しの**直前**に、解説ブロック(`content/*.html`)と「このあとに使いたいツール」を挿入
 
-> 既存の `sitemap.xml` / `robots.txt` / `assets/` と名前が重なる場合は、上書きせず内容を比較してください。
-> 注意: GitHub Pages のプロジェクトサイト(`/minecraft-tools/`)では、`robots.txt` はホスト直下にないため検索エンジンに読まれません(害はありません)。**sitemap は Search Console から直接送信**してください。
+既存のツール本体・使い方・FAQ・「ほかのマイクラツール」は削除しません。
 
 ## 反映手順
-1. 上記ファイルをリポジトリ直下にコピー → commit → push
-2. 数分後に `https://tasotaso55.github.io/minecraft-tools/` を開き、検索・カテゴリー・カードのリンクを確認
-3. Search Console で `sitemap.xml` を送信し、トップを「URL検査」→インデックス登録をリクエスト
+1. このzipの `assets/guide.css` `content/` `scripts/` と、`assets/tools-data.js`(ホーム用・版表示を修正済み)をリポジトリ直下にコピー
+2. リポジトリ直下で `node scripts/apply-seo.mjs --dry`(確認のみ)→ `node scripts/apply-seo.mjs`
+3. `git diff` で各ページの差分を確認 → ブラウザで全ページとツールの動作を確認 → commit / push
+- 見出し「ほかのマイクラツール」が見つからないページは、そのページを変更せず「NG」と表示します。`content/<名前>.html` を手動で貼ってください。
+- 何度実行しても二重になりません(`SEO-HEAD` / `SEO-GUIDE` のコメントの間を置き換えます)。
+- canonical は本番の `https://tasotaso55.github.io/minecraft-tools/<slug>/` になります。別URLにするなら `--base https://…/` を付けます。
+- 文面を直したいときは `content/*.html`、title/description・「次に使うツール」は `scripts/apply-seo.mjs` の `PAGES` を編集して再実行します。
 
-## ツールを追加するとき
-1. `circle/` と同様に新しいフォルダでツールページを作る
-2. `assets/tools-data.js` の `tools` に1件追記(`isNew: true`, `added: 'YYYY-MM-DD'`)
-3. `node scripts/build.mjs` を実行 → sitemap / JSON-LD / noscript が更新される
-4. 関連するツールの `related` にも追加し、各ページの「ほかのツール」を更新
+## ⚠ 検証状況(必ず読んでください)
+- 私が確認できたのは**公開ページの表示内容だけ**で、HTMLソースは見ていません。スクリプトは「想定した構造のモック」で動作(挿入位置・2回実行しても二重にならないこと)だけ確認しました。**実サイトでの動作確認はしていません。**
+- ツールの実際の計算結果と照合していません。次の数値は、このツールの判定方法(マスの中心が円の内側か)を基に私が計算したものです。**円ツールの表示と一致するか確認してください。**
+  - 直径10 → 80個、直径20 → 316個、直径30 → 716個(塗りつぶし)と、各行の連続数
+- 次の記述は、既存の仕様説明と一致するか確認してください: ネザーの「端数は切り捨て」、距離の移動速度(ページ記載の数値をそのまま使用)。
 
-人気ツールは `isPopular` を手動で切り替えます。将来アクセス数で決める場合も、このフラグを書き換えるだけで済みます。
+## 既存ページの内容で気づいた点(要確認)
+1. **修繕と無限の競合**: エンチャントのFAQは版を区別せず「付けられません」と書いています。私の記憶では、版によって扱いが異なる可能性があります。ツールの版切り替えで実際の表示を確認し、必要ならFAQに版を明記してください(追加ブロックでは断定を避けています)。
+2. **村人の取引は統合版基準**です(ページ末尾の出典がGame8の統合版記事)。そのため、ホームのカード表示を「Java版 ？/統合版 ○」に修正しました(`assets/tools-data.js`)。Java版の内容が分かるなら更新してください。
+3. **エンチャント一覧は統合版・Java版の両対応**です。前回、私が「統合版 ？」としていたのは誤りだったので修正しました。
+4. 村人ページの説明文は「13職業」で、私の職業ブロック表も13件です。
+5. `/minecraft-tools-test/` のホームの canonical は本番 `/minecraft-tools/` を指しています。本番へ移すときの意図どおりか確認してください。
 
-## ⚠ 要確認: Java版 / 統合版の表示
-私は各ツールの中身(ソース)を確認できず、公開ページの表示内容と仕様の性質から判断しています。
-**`versions` はご自身で確認して修正してください。** 未確認のものは `unknown`(画面では「？」)にしてあります。
+## 今回やっていないこと(理由)
+- **パンくずへのカテゴリー追加**: 既存のパンくずは「トップ → ツール」で、HTML構造が不明なため触っていません。JSON-LD も見た目に合わせて2階層にしてあります。
+- **エンチャントごとの個別URL**: ツール内部のデータ構造が見えないため未実装です。代わりに `/enchantment/#mending` `#silk-touch` `#efficiency` `#unbreaking` `#fortune` `#infinity` で、追加した解説に直接リンクできます。個別URL化は、データのソースを共有してもらえれば次の段階で設計できます。
+- **FAQPage の JSON-LD**: 見える文面との不一致リスクと、表示上のメリットが小さいため入れていません。
+- **「ファーストビューで検索価値を示す」(村人)**: 既存のH1直下の説明文が、すでにその内容(欲しいアイテムで検索→職業とブロック)なので変更していません。検索欄の位置・デザインはHTML/CSSが必要なため未対応です。
+- **「建築材料計算」ツール**: まだ存在しないため、円ページからは既存のスタック計算へリンクしています。
 
-| ツール | Java | 統合版 | 根拠 |
-|---|---|---|---|
-| 円・球 / ネザー座標 / 距離 / 座標メモ | ○ | ○ | 版に依存しない計算 |
-| チャンク | ○ | △ | リージョンはJava版の仕様 |
-| スタック / エンチャント / 村人 | ○ | ？ | 統合版で差異の可能性。要確認 |
-
-## 各ツールページに足す小さな変更(任意・既存本文は削除しない)
-今回は各ツールのHTMLが見えないため、自動書き換えはしていません。以下を手動で追加してください。
-
-**1. パンくずを「トップ → カテゴリー → ツール」に**(カテゴリーは `../#cat-coords` のようなリンクで、ホームの絞り込み表示が開きます)
-```html
-<ol class="breadcrumb">
-  <li><a href="../">トップ</a></li>
-  <li><a href="../#cat-coords">座標・探索</a></li>
-  <li aria-current="page">ネザー座標計算</li>
-</ol>
-```
-カテゴリーID: `build` / `coords` / `items` / `enchant` / `villager`
-
-**2. パンくずのJSON-LD**(ページ上に同じパンくずがある場合のみ)
-```html
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
- {"@type":"ListItem","position":1,"name":"トップ","item":"https://tasotaso55.github.io/minecraft-tools/"},
- {"@type":"ListItem","position":2,"name":"座標・探索","item":"https://tasotaso55.github.io/minecraft-tools/#cat-coords"},
- {"@type":"ListItem","position":3,"name":"ネザー座標計算","item":"https://tasotaso55.github.io/minecraft-tools/nether/"}]}
-</script>
-```
-FAQPage のJSON-LDは、ページ上のFAQ文と**完全に同じ内容**のときだけ追加してください(`circle` と `nether` には既に3問ずつFAQがあります)。
-
-**3. 「ほかのツール」の推奨(3〜5件)** … `tools-data.js` の `related` と同じ内容です
-| ページ | 推奨 |
-|---|---|
-| circle | stack, memo, chunk, distance |
-| nether | memo, distance, chunk |
-| stack | circle, villager |
-| chunk | nether, distance, memo, circle |
-| distance | nether, chunk, memo |
-| enchantment | villager, stack |
-| memo | nether, distance, chunk |
-| villager | enchantment, stack, memo |
-
-**4. 全ページ共通の確認**: `<link rel="canonical">`、`<link rel="icon" href="../favicon.svg">`、OGP(`og:title/description/url`)、titleが全ページで重複しないこと。
-
-## circle/ に追加できる解説ブロック(既存FAQの下に追加。文面は調整してください)
-```html
-<h2>マイクラで円・球・ドームを作る手順</h2>
-<p>円形の建築は、先に「どのブロックを置くか」を平面図で決めておくと迷いません。このツールで直径を入力し、上から見た配置図を見ながら、中心線を基準に1行ずつ置いていきます。</p>
-<h3>円形の建物・塔を作るには</h3>
-<p>「円」を選び、直径を入れます。外壁だけなら「外周のみ」、床や広場なら「塗りつぶし」を選びます。必要ブロック数も表示されるので、素材集めの目安にできます。</p>
-<h3>球・ドームを作るには</h3>
-<p>「球」または「ドーム」を選び、◀▶で層を切り替えながら下の層から順に積みます。「全層を並べて表示」で全体の形を確認でき、「画像として保存」で建築中に見返せます。</p>
-<h3>楕円形にしたいときは</h3>
-<p>「楕円」を選び、幅(X方向)と奥行き(Z方向)を別々に入力します。</p>
-```
-(記載内容は現在のページの機能説明のみで、存在しない機能は書いていません。)
+## ページごとの変更一覧
+| ページ | 追加した解説 | 次に使うツール |
+|---|---|---|
+| circle | 作り方の手順、円/楕円/球/ドームの違い、直径10・20・30の例、補足Q&A | stack, memo, chunk |
+| nether | 計算方法、具体例、ゲートをつなぐ方法、ずれる原因 | distance, memo, chunk |
+| stack | 1スタックとは、容量表、計算例 | circle, villager, distance |
+| chunk | チャンクとは(用語表)、計算方法と例、スライムチャンクは判定不可と明記 | nether, distance, memo |
+| distance | 距離の計算式、例2つ(移動時間はページ記載の速度で計算) | nether, memo, chunk |
+| enchantment | 修繕・シルクタッチ・効率強化・耐久力・幸運・無限、エンチャントの本 | villager, stack |
+| memo | 用途7種、座標の確認方法、localStorage保存の注意 | nether, distance, chunk |
+| villager | 13職業と職業ブロックの表、取引のしくみ、統合版基準の注記 | enchantment, stack, memo |
 
 ## 公開前チェックリスト
-- [ ] 全8ツールのURLが開く / 各ツールが動く
-- [ ] ホームで検索(例: ネザー・円・座標・ドーム)とカテゴリー絞り込みが動く
-- [ ] スマホ幅(360px)で横スクロールが出ない
-- [ ] ブラウザのコンソールにエラーがない
+- [ ] 全8ページが開く / 各ツールが動く / コンソールにエラーがない
+- [ ] 追加ブロックの数値・文面が実際のツールと矛盾しない(特に円の数値)
+- [ ] スマホ幅で表がはみ出さず、横スクロールが出ない
 - [ ] 全ページの title が重複していない
-- [ ] Java/統合版の表示を確認・修正した
-- [ ] (任意)OGP画像 `og:image` 用に 1200×630 の画像を用意して追記
+- [ ] canonical が各ページの本番URLになっている
+- [ ] Search Console で各URLの再クロールをリクエスト

@@ -70,7 +70,7 @@ window.MC_SITE = {
       id: 'enchantment', name: 'マイクラ エンチャント一覧', shortName: 'エンチャント一覧', icon: '✨',
       url: 'enchantment/', category: 'enchant',
       summary: '全43種のエンチャントについて、付与できる対象・最大レベル・競合するエンチャントを確認。',
-      versions: { java: 'yes', bedrock: 'unknown', note: 'Java版を基準にしています。統合版とは内容が異なる場合があります。' },
+      versions: { java: 'yes', bedrock: 'yes', note: 'ページ内で統合版/Java版を切り替えられます。' },
       keywords: ['エンチャント','付与','魔法','最大レベル','競合','装備','修繕','enchant'],
       related: ['villager', 'stack'],
       isPopular: false, isNew: false
@@ -88,7 +88,7 @@ window.MC_SITE = {
       id: 'villager', name: 'マイクラ 村人の取引一覧', shortName: '村人の取引', icon: '🏘',
       url: 'villager/', category: 'villager',
       summary: '職業別の取引内容を確認。アイテム名から取引を検索できます。',
-      versions: { java: 'yes', bedrock: 'unknown', note: 'Java版を基準にしています。統合版とは取引内容が異なる場合があります。' },
+      versions: { java: 'unknown', bedrock: 'yes', note: '統合版を基準に整理した一覧です。Java版とは内容が異なる場合があります。' },
       keywords: ['村人','取引','司書','職業','エメラルド','trade','villager'],
       related: ['enchantment', 'stack', 'memo'],
       isPopular: false, isNew: false
