@@ -3,13 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>マイクラ 座標メモ｜拠点・村・ネザーゲートの座標を保存</title>
-<meta name="description" content="マイクラの拠点・村・ネザーゲートなどの座標を名前付きで保存できる無料メモ。ネザー座標への換算や /tp コマンドのコピーにも対応。">
-<meta property="og:title" content="マイクラ 座標メモ｜拠点・村・ネザーゲートの座標を保存">
-<meta property="og:description" content="マイクラの拠点・村・ネザーゲートなどの座標を名前付きで保存できる無料メモ。ネザー座標への換算や /tp コマンドのコピーにも対応。">
+<title>マイクラ座標メモ｜拠点・村・ネザーゲートを保存</title>
+<meta name="description" content="マイクラの拠点・村・ネザーゲート・エンドポータル・トラップなどの座標を名前付きで保存できる無料メモ。ネザー座標への換算や /tp コマンドのコピーにも対応。">
+<meta property="og:title" content="マイクラ座標メモ｜拠点・村・ネザーゲートを保存">
+<meta property="og:description" content="マイクラの拠点・村・ネザーゲート・エンドポータル・トラップなどの座標を名前付きで保存できる無料メモ。ネザー座標への換算や /tp コマンドのコピーにも対応。">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="../css/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "メモはどこに保存されますか?", "acceptedAnswer": {"@type": "Answer", "text": "お使いのブラウザ内(localStorage)に保存され、サーバーには送信されません。別の端末やブラウザでは見られません。"}}, {"@type": "Question", "name": "メモが消えることはありますか?", "acceptedAnswer": {"@type": "Answer", "text": "ブラウザのサイトデータを削除すると消えます。大切な座標は別の場所にも控えておくと安心です。"}}]}</script>
+<link rel="canonical" href="https://tasotaso55.github.io/minecraft-tools/memo/">
+<meta property="og:url" content="https://tasotaso55.github.io/minecraft-tools/memo/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="マイクラ便利ツール集">
+<meta name="twitter:card" content="summary">
+<!-- SEO-HEAD:START -->
+<link rel="stylesheet" href="../css/guide.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://tasotaso55.github.io/minecraft-tools/"},{"@type":"ListItem","position":2,"name":"座標メモ","item":"https://tasotaso55.github.io/minecraft-tools/memo/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"マイクラ座標メモ｜拠点・村・ネザーゲートを保存","url":"https://tasotaso55.github.io/minecraft-tools/memo/","description":"マイクラの拠点・村・ネザーゲート・エンドポータル・トラップなどの座標を名前付きで保存できる無料メモ。ネザー座標への換算や /tp コマンドのコピーにも対応。","inLanguage":"ja","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}}</script>
+<!-- SEO-HEAD:END -->
 </head>
 <body>
 <header class="site"><a class="brand" href="../">⛏ マイクラ便利ツール集</a><nav class="gnav" aria-label="ツール一覧"><a href="../circle/">⭕ 円・球生成器</a><a href="../nether/">🔁 ネザー座標計算</a><a href="../stack/">📦 スタック計算</a><a href="../chunk/">🧱 チャンク計算</a><a href="../distance/">📏 距離計算</a><a href="../enchantment/">✨ エンチャント一覧</a><a href="../memo/" aria-current="page">📍 座標メモ</a><a href="../villager/">🏘 村人の取引</a></nav></header>
@@ -31,6 +41,28 @@
 </section>
 <section class="info"><h2>使い方</h2><ol><li>名前・ディメンション・X・Y・Z を入力して「保存」を押します。</li><li>一覧から検索して、座標や /tp コマンドをコピーします。</li><li>不要なメモは「削除」で消せます。</li></ol></section>
 <section class="info"><h2>よくある質問</h2><dl><dt>メモはどこに保存されますか?</dt><dd>お使いのブラウザ内(localStorage)に保存され、サーバーには送信されません。別の端末やブラウザでは見られません。</dd><dt>メモが消えることはありますか?</dt><dd>ブラウザのサイトデータを削除すると消えます。大切な座標は別の場所にも控えておくと安心です。</dd></dl></section>
+<!-- SEO-GUIDE:START -->
+<section class="info"><h2 id="uses">座標メモでよく保存する場所</h2>
+<p>大事な場所の座標は、見つけたときにすぐ保存しておくと、あとで探し直さずに済みます。ディメンション(オーバーワールド・ネザー・エンド)も一緒に保存できます。</p>
+<div class="g-table"><table>
+<tr><th>保存する場所</th><th>メモの例</th></tr>
+<tr><td>拠点</td><td>メイン拠点、サブ拠点</td></tr>
+<tr><td>村</td><td>司書の村、交易所</td></tr>
+<tr><td>ネザーゲート</td><td>拠点側のゲートと、ネザー側のゲート</td></tr>
+<tr><td>エンドポータル</td><td>エンドへの入口</td></tr>
+<tr><td>トラップ</td><td>モンスタートラップ、経験値トラップ</td></tr>
+<tr><td>ダイヤ採掘地点</td><td>ダイヤが多く出た場所</td></tr>
+<tr><td>古代都市</td><td>見つけた古代都市の入口</td></tr>
+</table></div></section>
+<section class="info"><h2 id="coords">現在地の座標を確認するには</h2>
+<ul>
+<li><strong>Java版:</strong> F3キーでデバッグ画面を開くと、XYZ座標が表示されます。</li>
+<li><strong>統合版:</strong> ワールドの設定で「座標を表示」をオンにします。</li>
+</ul></section>
+<section class="info"><h2 id="storage">保存先についての注意</h2>
+<div class="g-note">メモはお使いのブラウザ内(localStorage)に保存されます。サーバーには送信されず、別の端末や別のブラウザでは見られません。ブラウザのサイトデータを削除すると消えるため、大切な座標は別の場所にも控えておくと安心です。</div>
+<p>ネザーの対応座標は<a href="../nether/">ネザー座標計算</a>、拠点間の距離は<a href="../distance/">距離計算</a>で確認できます。</p></section>
+<!-- SEO-GUIDE:END -->
 <section class="info"><h2>ほかのマイクラツール</h2><div class="cards"><a class="cl" href="../nether/"><b>🔁 ネザー座標計算</b><span>オーバーワールドとネザーの座標変換・コピー</span></a><a class="cl" href="../distance/"><b>📏 距離計算</b><span>2点間の距離と移動時間の目安</span></a><a class="cl" href="../chunk/"><b>🧱 チャンク計算</b><span>座標からチャンク境界・リージョン</span></a><a class="cl" href="../circle/"><b>⭕ 円・球生成器</b><span>円・楕円・球・ドームのブロック配置と必要数</span></a></div></section>
 </main>
 <footer><a href="../">トップ</a> ・ マイクラ便利ツール集 ・ 非公式ツールです。Minecraft は Mojang Studios / Microsoft の商標です。</footer>
